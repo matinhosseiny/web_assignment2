@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170421235912) do
+ActiveRecord::Schema.define(version: 20170424153255) do
+
+  create_table "scoresheets", force: :cascade do |t|
+    t.integer  "teamnumber"
+    t.integer  "user_id"
+    t.integer  "correctness"
+    t.integer  "creativity"
+    t.integer  "relevence"
+    t.integer  "sustainability"
+    t.integer  "userexperience"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["user_id"], name: "index_scoresheets_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

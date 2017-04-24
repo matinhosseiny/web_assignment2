@@ -10,3 +10,15 @@ User.create!(name:  "admin user",
              password:              "foobar",
              password_confirmation: "foobar",
              admin: true)
+User.create!(name:  "judge1",
+             email: "judge1@yahoo.com",
+             password:              "foobar",
+             password_confirmation: "foobar")
+             
+             
+users = User.order(:created_at).take(6)
+2.times do
+  team = 1
+  users.each { |user| user.scoresheets.create!(teamnumber: team) }
+  
+end

@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
-before_action :admin_user,     only: :index
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+  before_action :admin_user,     only: :index
   def show
     @user = User.find(params[:id])
+    @scoresheets = @user.scoresheets.paginate(page: params[:page])
   end
   def index
     @users = User.all
@@ -25,6 +27,11 @@ before_action :admin_user,     only: :index
     def user_params
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
+    end
+    
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
     end
     def admin_user
       redirect_to(root_url) unless current_user.admin?
