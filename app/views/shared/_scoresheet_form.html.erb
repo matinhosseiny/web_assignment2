@@ -2,7 +2,7 @@
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
        <%= f.label :teamnumber %>
-      <%= f.text_field :teamnumber, class: 'form-control' %>
+      <%= f.text_field :teamnumber, class: 'form-control', :readonly => true %>
    <%= f.label :correctness %>
       <%= f.text_field :correctness, class: 'form-control' %>
     <%= f.label :creativity %>

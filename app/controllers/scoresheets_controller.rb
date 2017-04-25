@@ -20,6 +20,17 @@ class ScoresheetsController < ApplicationController
   end
   
   
+  def update
+    @scoresheet =current_user.scoresheets.find(params[:id])
+    if @scoresheet.update_attributes(scoresheet_params)
+      flash[:success] = "Profile updated"
+      redirect_to current_user
+    else
+      render 'edit'
+    end
+  end
+  
+  
   private
 
     def scoresheet_params
