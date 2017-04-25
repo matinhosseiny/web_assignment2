@@ -10,7 +10,9 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-
+def feed
+    Scoresheet.where("user_id = ?", id)
+end
   
 class << self
   # Returns the hash digest of the given string.
@@ -25,6 +27,7 @@ class << self
     SecureRandom.urlsafe_base64
   end
 end
+
 
   # Remembers a user in the database for use in persistent sessions.
   def remember
