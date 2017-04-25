@@ -1,6 +1,6 @@
 class ScoresheetsController < ApplicationController
-    before_action :logged_in_user, only: [:create, :destroy,:edit]
-    before_action :correct_user,   only: :edit
+    before_action :logged_in_user, only: [:create, :destroy,:edit, :show]
+    before_action :correct_user,   only: [:edit, :show]
   def create
     @scoresheet = current_user.scoresheets.build(scoresheet_params)
     if @scoresheet.save
@@ -12,11 +12,20 @@ class ScoresheetsController < ApplicationController
     end
   end
 
+
+  def show
+     render 'static_pages/test'
+  end
+
   def destroy
   end
   def edit
-    @scoresheet = current_user.scoresheets.find(params[:id])
     
+    if current_user.admin?
+        @scoresheet =Scoresheet.find_by(id: params[:id])
+      else
+    @scoresheet = current_user.scoresheets.find(params[:id])
+  end
   end
   
   
@@ -38,7 +47,13 @@ class ScoresheetsController < ApplicationController
      
     end
     def correct_user
+      if current_user.admin?
+        @scoresheet =Scoresheet.find_by(id: params[:id])
+      else
+      
       @scoresheet = current_user.scoresheets.find_by(id: params[:id])
+      
       redirect_to root_url if @scoresheet.nil?
+      end
     end
 end

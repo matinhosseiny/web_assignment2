@@ -2,5 +2,9 @@
   <%= link_to gravatar_for(scoresheet.user, size: 50), scoresheet.user %>
   <span class="user"><%= link_to scoresheet.user.name, scoresheet.user %></span>
   <span class="teamnumber"><%= scoresheet.teamnumber %></span>
+  <% if current_user.admin?  %>
+  <%= link_to "show", scoresheet, method: :show %>
+  <%else%>
   <%= link_to "edit", scoresheet, method: :edit %>
+  <% end %>
 </li>
