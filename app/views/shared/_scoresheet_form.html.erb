@@ -1,0 +1,20 @@
+<%= form_for(@scoresheet) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+       <%= f.label :teamnumber %>
+      <%= f.text_field :teamnumber, class: 'form-control' %>
+   <%= f.label :correctness %>
+      <%= f.text_field :correctness, class: 'form-control' %>
+    <%= f.label :creativity %>
+      <%= f.text_field :creativity, class: 'form-control' %>
+    <%= f.label :relevence %>
+      <%= f.text_field :relevence, class: 'form-control' %>
+    <%= f.label :sustainability %>
+      <%= f.text_field :sustainability, class: 'form-control' %>
+    <%= f.label :"user experience" %>
+      <%= f.text_field :userexperience, class: 'form-control' %>
+
+ 
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

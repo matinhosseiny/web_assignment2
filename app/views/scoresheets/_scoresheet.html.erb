@@ -1,0 +1,6 @@
+<li id="scoresheet-<%= scoresheet.id %>">
+  <%= link_to gravatar_for(scoresheet.user, size: 50), scoresheet.user %>
+  <span class="user"><%= link_to scoresheet.user.name, scoresheet.user %></span>
+  <span class="teamnumber"><%= scoresheet.teamnumber %></span>
+  <span class="teamnumber"><%= scoresheet.correctness %></span>
+</li>

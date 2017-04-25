@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  teamnumber: 1
+  user: one
+  correctness: 1
+  creativity: 1
+  relevence: 1
+  sustainability: 1
+  userexperience: 1
+
+two:
+  teamnumber: 1
+  user: two
+  correctness: 1
+  creativity: 1
+  relevence: 1
+  sustainability: 1
+  userexperience: 1
