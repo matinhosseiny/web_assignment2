@@ -11,7 +11,7 @@ class ScoresheetsController < ApplicationController
     @users.each do |user|
       @scoresheet = user.scoresheets.build(team_params)
       if @scoresheet.save
-        flash[:success] = "scoresheet created!"
+        flash[:success] = "team created!"
         
       else
         
