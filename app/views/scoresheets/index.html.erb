@@ -1,1 +1,10 @@
-hello
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@scoresheet) do |f| %>
+      <%= f.label :teamnumber %>
+      <%= f.text_field :teamnumber %>
+      <%= f.submit "Create New Team", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+ 

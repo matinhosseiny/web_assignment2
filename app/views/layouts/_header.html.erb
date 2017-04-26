@@ -8,7 +8,7 @@
         <% if logged_in? %>
         <% if current_user.admin?  %>
     |<li><%= link_to "Users", users_path %></li>
-    <li><%= link_to "Teams", users_path %></li>
+    <li><%= link_to "Teams", scoresheets_path %></li>
   <% end %>
           
           <li class="dropdown">
