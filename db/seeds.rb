@@ -15,10 +15,3 @@ User.create!(name:  "judge1",
              password:              "foobar",
              password_confirmation: "foobar")
              
-             
-users = User.order(:created_at).take(6)
-2.times do
-  team = 1
-  users.each { |user| user.scoresheets.create!(teamnumber: team) }
-  
-end

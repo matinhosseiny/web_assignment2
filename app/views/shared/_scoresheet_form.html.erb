@@ -4,15 +4,18 @@
        <%= f.label :teamnumber %>
       <%= f.text_field :teamnumber, class: 'form-control', :readonly => true %>
    <%= f.label :correctness %>
-      <%= f.text_field :correctness, class: 'form-control' %>
+  
+ 
+<%= f.select :correctness, [ 1, 2, 3, 4, 5 ], :prompt => 'Select One'  %>
+
     <%= f.label :creativity %>
-      <%= f.text_field :creativity, class: 'form-control' %>
+      <%= f.select :creativity, [ 1, 2, 3, 4, 5 ], :prompt => 'Select One' %>
     <%= f.label :relevence %>
-      <%= f.text_field :relevence, class: 'form-control' %>
+      <%= f.select :relevence, [ 1, 2, 3, 4, 5 ], :prompt => 'Select One' %>
     <%= f.label :sustainability %>
-      <%= f.text_field :sustainability, class: 'form-control' %>
+      <%= f.select :sustainability, [ 1, 2, 3, 4, 5 ], :prompt => 'Select One' %>
     <%= f.label :"user experience" %>
-      <%= f.text_field :userexperience, class: 'form-control' %>
+      <%= f.select :userexperience, [ 1, 2, 3, 4, 5 ], :prompt => 'Select One' %>
 
  
   </div>
